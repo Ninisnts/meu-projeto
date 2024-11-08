@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Cadastrar Cliente{% endblock %}
+
+{% block content %}
+    <h2>Cadastrar Cliente</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.nome.label }} {{ form.nome(size=20) }}<br>
+        {{ form.idade.label }} {{ form.idade(size=3) }}<br>
+        {{ form.cpf.label }} {{ form.cpf(size=14) }}<br>
+        {{ form.email.label }} {{ form.email(size=30) }}<br>
+        {{ form.endereco.label }} {{ form.endereco(size=50) }}<br>
+        <button type="submit">Cadastrar</button>
+    </form>
+{% endblock %}

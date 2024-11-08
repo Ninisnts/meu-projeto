@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Produtos Cadastrados{% endblock %}
+
+{% block content %}
+    <h2>Produtos Cadastrados</h2>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Descrição</th>
+            <th>Quantidade em Estoque</th>
+        </tr>
+        {% for produto in produtos %}
+        <tr>
+            <td>
+                {% if produto.imagem_path %}
+                    <p>Sem imagem</p>
+                {% endif %}
+            </td>
+            <td>{{ produto.nome }}</td>
+            <td>R$ {{ produto.preco }}</td>
+            <td>{{ produto.descricao }}</td>
+            <td>{{ produto.quantidade_estoque }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
